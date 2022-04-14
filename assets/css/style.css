@@ -1,0 +1,240 @@
+@import url(./_font.css);
+@import url(./_grid.css);
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+.menu {
+  font-family: mikhak;
+  font-weight: bold;
+}
+
+.menu .menu-title {
+  background-color: darkblue;
+  color: #fff;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 0 30px;
+  position: fixed;
+  z-index: 998;
+}
+
+.aside-content {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s linear;
+}
+
+.aside-content .right-aside {
+  background-image: linear-gradient(270deg, #ff00bf, #fb0000);
+  position: relative;
+  transition: right 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  right: -100%;
+  transition: all 0.5s;
+}
+
+.aside-content .right-aside div.menu-logo {
+  width: 200px;
+  margin: 100px 0;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  padding: 40px 5px;
+  border-radius: 30px 0;
+  background-color: rgb(5, 122, 255);
+}
+
+div.menu-logo span {
+  font-size: 20px;
+}
+
+div.menu-logo span:nth-child(1) {
+  color: rgb(4, 199, 4);
+}
+
+div.menu-logo span:nth-child(3) {
+  color: rgba(218, 0, 84, 0.877);
+}
+
+.aside-content .right-aside ul {
+  margin: 80px 0 0 0;
+}
+
+.aside-content .right-aside ul li {
+  position: relative;
+  top: 40px;
+  border-bottom: 1px solid #efefef50;
+  margin: 10px 0;
+}
+
+.aside-content .right-aside a {
+  border-bottom: 2px solid rgb(4, 8, 255);
+}
+
+.aside-content .right-aside a::before {
+  content: "";
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  transition: left 0.3s ease-in-out;
+  border-radius: 100px;
+}
+
+.right-aside ul,
+.right-aside li,
+.right-aside li a {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  font-size: 15px;
+}
+
+.right-aside a:hover {
+  color: orange;
+}
+
+.right-aside a:hover::before {
+  left: 50%;
+}
+
+.menu .left-aside {
+  position: relative;
+  background-image: linear-gradient(92deg, #ff00bf, #fb0000);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  top: -100%;
+  transition: all 0.5s;
+}
+
+.menu .left-aside #close-toggle,
+.menu .aside-content #close-toggle-body {
+  text-align: left;
+  padding: 10px;
+  margin: 20px 50px;
+}
+
+.menu .left-aside #close-toggle i,
+.menu .aside-content #close-toggle-body i {
+  cursor: pointer;
+  font-size: 30px;
+  color: orange;
+}
+
+.menu .left-aside h1 {
+  font-size: 20px;
+  margin: 150px 0;
+}
+
+.menu .left-aside button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-family: mikhak;
+  font-weight: bold;
+  font-size: 17px;
+  color: #2c2c2c;
+  width: 100px;
+  transition: all 0.5s;
+}
+
+.menu .left-aside button:hover {
+  width: 130px;
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+.active-nav .aside-content {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.active-nav .aside-content .right-aside {
+  right: 0;
+  transition: right 1s !important;
+}
+
+.active-nav .aside-content .left-aside {
+  transition: top 1s !important;
+  top: 0;
+}
+
+#close-toggle-body {
+  position: absolute;
+  right: -100%;
+  z-index: 999;
+  transition: all 1s;
+}
+
+@media only screen and (max-width: 767px) {
+  .left-aside {
+    display: none;
+  }
+  #close-toggle-body {
+    transition: all 0.5s;
+    right: 0;
+  }
+}
+
+#bar {
+  top: 10px;
+  position: relative;
+  right: 30px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#bar span {
+  padding-top: 10px;
+  z-index: 1000;
+  display: block;
+  width: 30px;
+  position: absolute;
+  transition: all 0.5s;
+  border-bottom: 3px solid #fff;
+}
+
+#bar span:nth-child(1) {
+  top: 10px;
+}
+#bar span:nth-child(2) {
+  top: 20px;
+}
+#bar span:nth-child(3) {
+  top: 30px;
+}
+
+.toggle-menu span:nth-child(3) {
+  transform: rotate(45deg) translate(-4px, -10px);
+}
+.toggle-menu span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+.toggle-menu span:nth-child(1) {
+  transform: rotate(45deg) translate(12px, 4px);
+}
